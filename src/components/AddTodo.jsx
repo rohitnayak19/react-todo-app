@@ -11,7 +11,7 @@ const AddTodo = ({ addTodo }) => {
     }
   };
   return (
-    <div className="flex gap-5 p-5">
+    <div className="flex items-center gap-4 p-2 rounded-lg shadow-sm">
       <TextField
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -19,18 +19,25 @@ const AddTodo = ({ addTodo }) => {
         label="Add Task"
         variant="standard"
         className="w-full"
+        InputProps={{
+          className: 'text-zinc-800',
+        }}
+        InputLabelProps={{
+          className: 'text-zinc-500',
+        }}
       />
+
       <button
-        className="bg-green-400 text-white rounded-full p-3 transition duration-75 ease-linear hover:scale-105"
+        className="bg-green-500 text-white rounded-full p-3 transition-transform duration-200 ease-out hover:bg-green-600 hover:scale-110 focus:ring-2 focus:ring-green-300 focus:outline-none"
         onClick={handleAddTodo}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={2}
           stroke="currentColor"
-          className="size-6"
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"
@@ -40,6 +47,8 @@ const AddTodo = ({ addTodo }) => {
         </svg>
       </button>
     </div>
+
+
   );
 };
 
