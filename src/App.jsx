@@ -24,9 +24,10 @@ const App = () => {
   }, [todos]);
 
   const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false };
+    const newTodo = { id: Date.now(), text, completed: false, timestamp: new Date().toLocaleString() };
     setTodos([...todos, newTodo]);
   };
+
 
   const toggleTodo = (id) => {
     setTodos(
